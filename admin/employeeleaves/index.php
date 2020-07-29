@@ -1,0 +1,20 @@
+<?php
+require_once("../../include/initialize.php");
+if(!isset($_SESSION['USERID'])){
+	redirect(web_root."admin/index.php");
+}
+
+$view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
+ $title="Employees Leaves"; 
+ $header=$view; 
+switch ($view) {
+	case 'employeeleaves' :
+		$content    = 'viewemployeeleaves.php';		
+		break;
+
+	default :
+		$content    = 'viewemployeeleaves.php';		
+}
+require_once ("../theme/templates.php");
+?>
+  
